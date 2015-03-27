@@ -1,0 +1,3 @@
+Particle proxies are used to access and manipulate particles from a ParticleGroup. Since [Particle](Particle.md)s are not first-class objects, these proxies are necessary to address them individually.
+
+Each time a particle group is updated, particles in the group may be relocated or reclaimed. Because of this, any existing particle proxies or particle iterators are invalidated when a group is updated. Since particles are typically accessed only briefly while iterating the group in a controller or renderer, this restriction is not typically a problem. Just remember that storing a reference to a single particle for longer than a single update iteration will not work.
